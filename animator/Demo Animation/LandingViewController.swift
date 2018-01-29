@@ -23,10 +23,6 @@ class LandingViewController: UIViewController {
     }
     
     var timer: Timer!
-    
-    deinit {
-        timer.invalidate()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +30,11 @@ class LandingViewController: UIViewController {
         setupView()
         animator = UIDynamicAnimator(referenceView: view)
         collisionBehavior.addItem(squareView)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(addItemView), userInfo: nil, repeats: true)
         setupBehaior()
     }
-    
+
     @objc func addItemView() {
-        let item = UIView.random(point: CGPoint.init(x: .random(375), y: 0))
+        let item = UIView.random(point: CGPoint(x: .random(375), y: 0))
         view.addSubview(item)
         gravityBehavior.addItem(item)
         collisionBehavior.addItem(item)
@@ -53,7 +48,13 @@ class LandingViewController: UIViewController {
     
     @objc func handlePan(_ recognizer: UIPanGestureRecognizer) {
         let point = recognizer.location(in: view)
-        snapBehavior.snapPoint = point
+        if recognizer.state == .began {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(addItemView), userInfo: nil, repeats: true)
+        } else if recognizer.state == .changed {
+            snapBehavior.snapPoint = point
+        } else {
+            timer.invalidate()
+        }
     }
 
     func setupBehaior() {
