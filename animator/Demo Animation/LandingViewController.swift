@@ -34,7 +34,7 @@ class LandingViewController: UIViewController {
     }
 
     @objc func addItemView() {
-        let item = UIView.random(point: CGPoint(x: .random(375), y: 0))
+        let item = UIView.random(point: CGPoint(x: .random(in: 0...375), y: 0))
         view.addSubview(item)
         gravityBehavior.addItem(item)
         collisionBehavior.addItem(item)

@@ -37,7 +37,7 @@ class JikeViewController: UIViewController {
             let point = sender.location(in: view)
             if sender.state == .began {
                 animator.removeAllBehaviors()
-                let offset = UIOffsetMake(point.x - originPoint.x, point.y - originPoint.y)
+                let offset = UIOffset(horizontal: point.x - originPoint.x, vertical: point.y - originPoint.y)
                 attachmentBehavior = UIAttachmentBehavior(item: imageView, offsetFromCenter: offset, attachedToAnchor: point)
                 animator.addBehavior(attachmentBehavior!)
             } else if sender.state == .changed {

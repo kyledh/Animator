@@ -10,7 +10,7 @@ import UIKit
 
 class CollisionViewController: UIViewController {
     
-    private var referceBounds: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+    private var referceBounds = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
     private var animator: UIDynamicAnimator!
     private var collisionBehavior: UICollisionBehavior!

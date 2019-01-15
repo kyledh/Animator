@@ -17,10 +17,10 @@ extension UIColor {
     }
     
     public class func random(_ alpha: CGFloat) -> UIColor {
-        let red = CGFloat.random(256) / 255
-        let green = CGFloat.random(256) / 255
-        let blue = CGFloat.random(256) / 255
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        let red = CGFloat.random(in: 0...255)
+        let green = CGFloat.random(in: 0...255)
+        let blue = CGFloat.random(in: 0...255)
+        return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: alpha)
     }
 }
 
@@ -37,16 +37,8 @@ extension CGFloat {
     
     public static var random: CGFloat {
         get {
-            return random(100, 20)
+            return random(in: 20...100)
         }
-    }
-    
-    public static func random(_ max: Int) -> CGFloat {
-        return random(max, 0)
-    }
-    
-    public static func random(_ max: Int, _ min: Int) -> CGFloat {
-        return CGFloat(Int(arc4random()) % max + min)
     }
 }
 
@@ -71,7 +63,7 @@ extension CGPoint {
         get {
             let width = UIScreen.main.bounds.size.width
             let height = UIScreen.main.bounds.size.height
-            return CGPoint(x: CGFloat.random(Int(width), 50), y: CGFloat.random(Int(height), 100))
+            return CGPoint(x: CGFloat.random(in: 50...width), y: CGFloat.random(in: 100...height))
         }
     }
 }

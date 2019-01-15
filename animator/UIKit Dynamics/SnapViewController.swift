@@ -60,7 +60,7 @@ class SnapViewController: UIViewController {
         stackView.spacing = 10
         stackView.distribution = .fillEqually
         stackView.tintColor = .random
-        view.bringSubview(toFront: stackView)
+        view.bringSubviewToFront(stackView)
         return stackView
     }()
     

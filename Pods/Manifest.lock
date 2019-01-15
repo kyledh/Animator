@@ -1,15 +1,16 @@
 PODS:
-  - pop (1.0.10)
-  - SnapKit (4.0.0)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - pop (~> 1.0)
-  - SnapKit (~> 4.0.0)
+  - SnapKit (~> 4.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
 
 SPEC CHECKSUMS:
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 78117d48f6ea77a7033366cbcdf7281479b0519a
+PODFILE CHECKSUM: 61eb650d4e9a64b69e507244e94481c395dfd5aa
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.5.3

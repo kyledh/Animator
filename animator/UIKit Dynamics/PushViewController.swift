@@ -10,7 +10,7 @@ import UIKit
 
 class PushViewController: UIViewController {
     
-    private var referceBounds: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+    private var referceBounds = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
     private var animator: UIDynamicAnimator!
     private var pushBehavior: UIPushBehavior!
@@ -64,7 +64,7 @@ class PushViewController: UIViewController {
         stackView.spacing = 10
         stackView.distribution = .fillEqually
         stackView.tintColor = .random
-        view.bringSubview(toFront: stackView)
+        view.bringSubviewToFront(stackView)
         return stackView
     }()
     
