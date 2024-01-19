@@ -42,6 +42,21 @@ extension CGFloat {
     }
 }
 
+extension CirclrView {
+
+    public class var cRandom: CirclrView {
+        get {
+            return cRandom(point: .random)
+        }
+    }
+
+    public class func cRandom(point: CGPoint) -> CirclrView {
+        let view = CirclrView(frame: CGRect(origin: point, size: .random))
+        view.backgroundColor = .random
+        return view
+    }
+}
+
 extension UIView {
     
     public class var random: UIView {
@@ -61,8 +76,8 @@ extension CGPoint {
     
     public static var random: CGPoint {
         get {
-            let width = UIScreen.main.bounds.size.width
-            let height = UIScreen.main.bounds.size.height
+            let width = UIScreen.main.bounds.size.width - 50
+            let height = UIScreen.main.bounds.size.height - 100
             return CGPoint(x: CGFloat.random(in: 50...width), y: CGFloat.random(in: 100...height))
         }
     }

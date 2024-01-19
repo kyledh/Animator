@@ -17,7 +17,6 @@
 		273164681FDA35CE00E385E4 /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273164671FDA35CE00E385E4 /* GravityViewController.swift */; };
 		2731646A1FDA3B4C00E385E4 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273164691FDA3B4C00E385E4 /* SlideView.swift */; };
 		2731646C1FDA6B9300E385E4 /* CollisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731646B1FDA6B9300E385E4 /* CollisionViewController.swift */; };
-		273983751FFFA0FE0094C54E /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273983741FFFA0FE0094C54E /* TransitionViewController.swift */; };
 		2770CB202003398900EEBF2E /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770CB1F2003398900EEBF2E /* BallView.swift */; };
 		2770CB2220034EB200EEBF2E /* ShootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770CB2120034EB200EEBF2E /* ShootViewController.swift */; };
 		2770CB242003501E00EEBF2E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770CB232003501E00EEBF2E /* Then.swift */; };
@@ -42,7 +41,6 @@
 		273164671FDA35CE00E385E4 /* GravityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
 		273164691FDA3B4C00E385E4 /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		2731646B1FDA6B9300E385E4 /* CollisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionViewController.swift; sourceTree = "<group>"; };
-		273983741FFFA0FE0094C54E /* TransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		2770CB1F2003398900EEBF2E /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		2770CB2120034EB200EEBF2E /* ShootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootViewController.swift; sourceTree = "<group>"; };
 		2770CB232003501E00EEBF2E /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				273983761FFFA1190094C54E /* Demo Animation */,
-				273983731FFF9E380094C54E /* Core Animation */,
 				2731646D1FDA6BB300E385E4 /* UIKit Dynamics */,
 				273164511FD9311A00E385E4 /* AppDelegate.swift */,
 				273164581FD9311A00E385E4 /* Assets.xcassets */,
@@ -114,14 +111,6 @@
 				2774DB021FE000C400F35671 /* SnapViewController.swift */,
 			);
 			path = "UIKit Dynamics";
-			sourceTree = "<group>";
-		};
-		273983731FFF9E380094C54E /* Core Animation */ = {
-			isa = PBXGroup;
-			children = (
-				273983741FFFA0FE0094C54E /* TransitionViewController.swift */,
-			);
-			path = "Core Animation";
 			sourceTree = "<group>";
 		};
 		273983761FFFA1190094C54E /* Demo Animation */ = {
@@ -185,7 +174,7 @@
 				TargetAttributes = {
 					2731644D1FD9311A00E385E4 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -245,7 +234,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-animator/Pods-animator-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-animator/Pods-animator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -254,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-animator/Pods-animator-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-animator/Pods-animator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -275,7 +264,6 @@
 				273164641FD9350600E385E4 /* JikeViewController.swift in Sources */,
 				273164681FDA35CE00E385E4 /* GravityViewController.swift in Sources */,
 				2731646C1FDA6B9300E385E4 /* CollisionViewController.swift in Sources */,
-				273983751FFFA0FE0094C54E /* TransitionViewController.swift in Sources */,
 				273164521FD9311A00E385E4 /* AppDelegate.swift in Sources */,
 				27E47D162004C0E700A723B7 /* LandingViewController.swift in Sources */,
 				2774DB011FDFEF8200F35671 /* Random.swift in Sources */,
@@ -422,9 +410,10 @@
 			baseConfigurationReference = 91C1A86964D1E20C9E711A55 /* Pods-animator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3UA2K68AY;
 				INFOPLIST_FILE = animator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyle.animator;
@@ -440,9 +429,10 @@
 			baseConfigurationReference = 0EE58C81122E71357A27339A /* Pods-animator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F3UA2K68AY;
 				INFOPLIST_FILE = animator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyle.animator;

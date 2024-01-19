@@ -20,11 +20,7 @@ class ViewController: UIViewController {
         ("UIPushBehavior", PushViewController.self),
         ("UISnapBehavior", SnapViewController.self),
     ]
-    
-    private var coreAnimationData: [RowData] = [
-        ("Transition", TransitionViewController.self)
-    ]
-    
+
     private var demoAnimationData: [RowData] = [
         ("JikeAvatar", JikeViewController.self),
         ("Shoot", ShootViewController.self),
@@ -38,7 +34,6 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         title = "Animator"
         tableData = [("UIKit Dynamics", uikitDynamicsData),
-                     ("Core Animation", coreAnimationData),
                      ("Demo Animation", demoAnimationData)]
         tableView.reloadData()
     }
@@ -83,12 +78,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         tableView.deselectRow(at: indexPath, animated: false)
         let row = tableData[indexPath.section].rowData[indexPath.row]
-        let vc = row.classType.init()
-//        present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
-//        navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(row.classType.init(), animated: true)
     }
 }

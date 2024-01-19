@@ -2,7 +2,7 @@
 //  LandingViewController.swift
 //  animator
 //
-//  Created by donghao on 2018/1/9.
+//  Created by kyle on 2018/1/9.
 //  Copyright © 2018年 kyle. All rights reserved.
 //
 
@@ -27,6 +27,8 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Landing"
+        
         setupView()
         animator = UIDynamicAnimator(referenceView: view)
         collisionBehavior.addItem(squareView)
